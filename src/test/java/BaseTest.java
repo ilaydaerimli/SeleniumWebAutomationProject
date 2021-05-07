@@ -21,15 +21,14 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.gittigidiyor.com/");
-        System.out.println("Test initiated.");
         loginPage = new LoginPage(driver);
         System.out.println("Test initiated!");
     }
 
     @Test
     public void TestHomePage(){
-        WebElement signbtn= driver.findElement(By.className("myBtn"));
-        signbtn.click();
+        WebElement login_button= driver.findElement(By.className("myBtn"));
+        login_button.click();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         WebElement mailbox= driver.findElement(By.id("email"));
@@ -39,8 +38,9 @@ public class BaseTest {
         WebElement password = driver.findElement(By.id("password"));
         password.click();
         password.sendKeys("Your Password");
+
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.id("loginButton")).click();
+        driver.findElement(By.id("gg-login-enter")).click();
     }
 
     @AfterAll

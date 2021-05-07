@@ -2,10 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import javax.swing.plaf.basic.BasicPasswordFieldUI;
-
 public class LoginPage extends BasePage {
-    private WebDriver driver;
 
     private final By username = By.id("L-userNameField");
     private final By password = By.id("L-BasicPasswordField");
